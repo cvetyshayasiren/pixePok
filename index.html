@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1a1c2c" />
+    <title>Пиксельный ловец</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game" aria-label="Игровая сцена"></canvas>
+
+      <div id="hud" class="hud">
+        <div class="hud-top">
+          <div class="chip" id="hud-location">Улица Заката</div>
+          <div class="chip-row">
+            <div class="chip" id="hud-phase">День</div>
+            <div class="chip" id="hud-weather">Ясно</div>
+            <div class="chip chip-stat"><span>Шары</span><b id="hud-balls">8</b></div>
+            <div class="chip chip-stat"><span>Поймано</span><b id="hud-caught">0</b></div>
+          </div>
+        </div>
+
+        <div class="hud-bottom">
+          <div class="actions">
+            <button type="button" class="btn btn-throw" id="btn-throw">Бросить покебол</button>
+            <button type="button" class="btn btn-map" id="btn-map">Карта</button>
+            <button type="button" class="btn btn-dex" id="btn-dex">Коллекция</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="speech" class="speech" aria-live="polite"></div>
+      <div id="toast" class="toast" role="status"></div>
+      <div id="fade" class="fade"></div>
+
+      <div id="modal-map" class="modal" aria-hidden="true">
+        <div class="sheet" role="dialog" aria-labelledby="map-title">
+          <header class="sheet-head">
+            <h2 id="map-title">Районы города</h2>
+            <button type="button" class="icon-x" data-close="modal-map" aria-label="Закрыть">×</button>
+          </header>
+          <div id="map-list" class="map-list"></div>
+        </div>
+      </div>
+
+      <div id="modal-dex" class="modal" aria-hidden="true">
+        <div class="sheet" role="dialog" aria-labelledby="dex-title">
+          <header class="sheet-head">
+            <h2 id="dex-title">Коллекция</h2>
+            <button type="button" class="icon-x" data-close="modal-dex" aria-label="Закрыть">×</button>
+          </header>
+          <div id="dex-list" class="dex-list"></div>
+        </div>
+      </div>
+
+      <div id="rotate-hint" class="rotate">
+        <div class="rotate-card">
+          <div class="phone-ico"></div>
+          <p>Поверните телефон вертикально</p>
+          <small>Сцена рассчитана на портрет</small>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
